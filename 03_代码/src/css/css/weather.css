@@ -1,0 +1,7 @@
+.mrl50{margin-left: 50px;}
+.mrl20{margin-left: 20px;}
+.weather-title {
+	color: #88c6ff;font-size:14px;display: inline-block;
+}
+.radius-border{height:6px;width:100%;border:1px solid #3151b9;margin:10px 0 40px;border-radius: 5px;background:#0e2282;}
+.weather-help{height:auto!important;}

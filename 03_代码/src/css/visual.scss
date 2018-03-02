@@ -1,0 +1,169 @@
+// 仪表盘
+.chart_main {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.chart_bg {
+    position: relative;
+}
+
+.chart_txt {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 38px;
+    left: 0;
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+}
+
+.chart_txt>span {
+    font-size: 14px;
+}
+
+.chart_txt>p {
+    font-size: 16px;
+}
+
+.posi-sty {
+    position: relative;
+    z-index: 999;
+}
+
+#speedometer_f {
+    position: absolute;
+    top: 61px;
+    left: 153px;
+    z-index: 9;
+}
+
+#speedometer_m {
+    position: absolute;
+    top: 13px;
+    left: 273px;
+}
+
+#speedometer_b {
+    position: absolute;
+    top: 61px;
+    left: 479px;
+    z-index: 9;
+}
+
+
+/*d3样式*/
+
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* css formats for the gauge */
+
+.gauge .domain {
+    stroke-width: 2px;
+    stroke: #35c5ed;
+}
+
+.gauge .tick line {
+    stroke: #35c5ed;
+    stroke-width: 2px;
+}
+
+.gauge line {
+    stroke: #35c5ed;
+}
+
+.gauge .arc,
+.gauge .cursor {
+    opacity: 0;
+}
+
+.gauge .major {
+    fill: #8ac7ff;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
+// 波浪条纹
+.canvasDiv canvas {
+    display: block;
+}
+.waveMain{
+    width:100%;
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.canvasDiv {
+    width: calc(50% - 1px);
+    height: 145px;
+    /*width:100%;*/
+    /*height: 100%;*/
+    position: relative;
+    // float: left;
+}
+
+.gradientLineLeft {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 145px;
+    float: right;
+    // !!!!!! 去掉 可视化的 中间竖线 渐变条
+    // background-image: linear-gradient(to bottom, rgba(3, 201, 227, 0), rgba(3, 201, 227, 0.6), rgba(3, 201, 227, 0.6), rgba(3, 201, 227, 0.8), rgba(3, 201, 227, 1));
+}
+
+.canvasDivLeft-main {
+    width: 100%;
+    height: 145px;
+    position: relative;
+    /*background: -webkit-linear-gradient(right top, rgba(7, 170, 224, 0.2), rgba(7, 170, 224, 0.2), rgba(15, 44, 120, 0));*/
+    /*background: linear-gradient(right top, rgba(2, 206, 239, 0.3), rgba(2, 206, 239, 0.2), rgba(2, 206, 239, 0));*/
+}
+
+.gradientLineRight {
+    width: 1px;
+    height: 145px;
+    // margin-left: 2px;
+    float: left;
+    // !!!!!! 去掉 可视化的 中间竖线 渐变条
+    // background-image: linear-gradient(to bottom, rgba(184, 248, 71, 0),rgba(184, 248, 71, 0.6),  rgba(184, 248, 71, 0.6), rgba(184, 248, 71, 0.8), rgba(184, 248, 71, 1));
+}
+.canvasDivRight-main{
+    width: 100%;
+    height: 145px;
+    position: relative;
+    /*background: -webkit-linear-gradient(left top, rgba(93, 186, 135, 0.6), rgba(93, 186, 135, 0.3), rgba(93, 186, 135, 0));*/
+    /*background: linear-gradient(left top, rgba(93, 186, 135, 0.6), rgba(93, 186, 135, 0.3), rgba(93, 186, 135, 0));*/
+}
+#myCanvasRight {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    background-image: url('../images/right.png');
+    background-size: 100% 100%;
+}
+
+#myCanvasLeft {
+    position: absolute;
+    /*top: 100px;*/
+    right: 3px;
+    background-image: url('../images/left.png');
+    background-size: 100% 100%;
+}

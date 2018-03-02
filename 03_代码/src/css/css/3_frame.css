@@ -1,0 +1,302 @@
+@charset "UTF-8";
+/* body 背景 */
+.body-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -100; }
+
+.body-bg > img {
+  height: 100%;
+  width: 100%;
+  border: 0; }
+
+.wrapper {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 30px 25px; }
+
+.cont {
+  display: table-cell;
+  vertical-align: top;
+  box-sizing: border-box;
+  width: calc(100% - 260px);
+  overflow: hidden;
+  padding: 0 20px 0;
+  color: #fff;
+  min-height: 300px;
+  transition: all .2s ease-in; }
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  height: 85px;
+  margin: 0 auto;
+  color: #fff; }
+  .head .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 350px; }
+    .head .title .line {
+      width: 1px;
+      height: 35px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 25%, #fff 50%, rgba(255, 255, 255, 0.3)); }
+    .head .title .name {
+      font-size: 27px;
+      text-shadow: 0 3px 8px #fff; }
+  .head .navigation {
+    width: 600px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .head .navigation .nav {
+      font-size: 0; }
+      .head .navigation .nav .nav-item {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 16px;
+        box-sizing: border-box; }
+        .head .navigation .nav .nav-item a {
+          display: inline-block;
+          padding: 0 10px;
+          padding-bottom: 5px;
+          box-sizing: border-box;
+          font-size: 16px;
+          color: #6CC3FF; }
+          .head .navigation .nav .nav-item a.active {
+            border-bottom: 2px solid rgba(74, 180, 254, 0.7); }
+    .head .navigation .profile button {
+      background: none;
+      border: none;
+      color: #b9daff;
+      margin-left: 15px; }
+
+.nav-bar-bg {
+  display: table-cell;
+  vertical-align: top;
+  width: 260px;
+  height: 100%;
+  padding: 18px;
+  font-size: 14px;
+  box-sizing: border-box;
+  background: #18216b;
+  background: linear-gradient(90deg, #151b5f, #1a2777);
+  color: #b9daff;
+  transition: all .2s ease-in; }
+  @media screen and (max-width: 1260px) {
+    .nav-bar-bg {
+      width: 200px; } }
+  .nav-bar-bg .nav-bar {
+    position: absolute;
+    width: 220px;
+    transition: all .2s ease-in; }
+    @media screen and (max-width: 1260px) {
+      .nav-bar-bg .nav-bar {
+        width: 165px; } }
+  .nav-bar-bg .navbar-item {
+    margin-bottom: 10px; }
+    .nav-bar-bg .navbar-item:last-child {
+      margin-bottom: 0; }
+    .nav-bar-bg .navbar-item h2 {
+      font-size: 0;
+      position: relative;
+      height: 35px;
+      line-height: 35px;
+      padding: 0 9px;
+      font-weight: normal;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      box-sizing: border-box;
+      cursor: pointer; }
+      .nav-bar-bg .navbar-item h2 .iconfont:last-child {
+        position: absolute;
+        font-size: 15px;
+        right: 0px;
+        top: 0px; }
+      .nav-bar-bg .navbar-item h2 i {
+        display: inline-block;
+        vertical-align: middle;
+        width: 35px;
+        font-size: 25px;
+        text-align: center;
+        color: #b9daff; }
+      .nav-bar-bg .navbar-item h2 a {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 14px;
+        width: calc(100% - 35px);
+        color: #b9daff; }
+    .nav-bar-bg .navbar-item ul {
+      display: none;
+      padding-left: 39px; }
+      .nav-bar-bg .navbar-item ul li {
+        line-height: 3; }
+        @media screen and (max-height: 768px) {
+          .nav-bar-bg .navbar-item ul li {
+            line-height: 2; } }
+      .nav-bar-bg .navbar-item ul a {
+        display: inline-block;
+        line-height: 1.5;
+        color: #b9daff;
+        transition: all .2s ease-in; }
+        .nav-bar-bg .navbar-item ul a:hover, .nav-bar-bg .navbar-item ul a.active {
+          color: #ffeb44; }
+
+body.globe_apple .apple-product a:before,
+body.production_status .apple-product a:before,
+body.produce_advantage .apple-product a:before,
+body.crop_weather .apple-product a:before, body.price_affect .market-price a:before,
+body.price_conduction .market-price a:before,
+body.price_forecast .market-price a:before,
+body.price_monitor .market-price a:before, body.trade_flow .commerce a:before,
+body.trade_influence .commerce a:before,
+body.trade_price .commerce a:before,
+body.trade_situation .commerce a:before,
+body.trade_world .commerce a:before, body.income_cost .cost-income a:before,
+body.income_profit .cost-income a:before, body.price_market .apple-consume a:before,
+body.consume_blueprint .apple-consume a:before,
+body.consume_channel .apple-consume a:before,
+body.consume_situation .apple-consume a:before,
+body.consume_supplydemand .apple-consume a:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 110%;
+  height: 150%;
+  background: radial-gradient(100% 100% at bottom -9px center, #4ab4fe, transparent 50%); }
+
+body.globe_apple .apple-product a:after,
+body.production_status .apple-product a:after,
+body.produce_advantage .apple-product a:after,
+body.crop_weather .apple-product a:after, body.price_affect .market-price a:after,
+body.price_conduction .market-price a:after,
+body.price_forecast .market-price a:after,
+body.price_monitor .market-price a:after, body.trade_flow .commerce a:after,
+body.trade_influence .commerce a:after,
+body.trade_price .commerce a:after,
+body.trade_situation .commerce a:after,
+body.trade_world .commerce a:after, body.income_cost .cost-income a:after,
+body.income_profit .cost-income a:after, body.price_market .apple-consume a:after,
+body.consume_blueprint .apple-consume a:after,
+body.consume_channel .apple-consume a:after,
+body.consume_situation .apple-consume a:after,
+body.consume_supplydemand .apple-consume a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0, rgba(74, 180, 254, 0.7) 50%, transparent 100%); }
+
+body.globe_apple .apple-product a,
+body.production_status .apple-product a,
+body.produce_advantage .apple-product a,
+body.crop_weather .apple-product a {
+  position: relative;
+  color: #fff !important; }
+
+body.price_affect .market-price a,
+body.price_conduction .market-price a,
+body.price_forecast .market-price a,
+body.price_monitor .market-price a {
+  position: relative;
+  color: #fff !important; }
+
+body.trade_flow .commerce a,
+body.trade_influence .commerce a,
+body.trade_price .commerce a,
+body.trade_situation .commerce a,
+body.trade_world .commerce a {
+  position: relative;
+  color: #fff !important; }
+
+body.income_cost .cost-income a,
+body.income_profit .cost-income a {
+  position: relative;
+  color: #fff !important; }
+
+body.price_market .apple-consume a,
+body.consume_blueprint .apple-consume a,
+body.consume_channel .apple-consume a,
+body.consume_situation .apple-consume a,
+body.consume_supplydemand .apple-consume a {
+  position: relative;
+  color: #fff !important; }
+
+body.globe_apple .navbar-item.globe_apple i.icon-arrowright:before,
+body.production_status .navbar-item.production_status i.icon-arrowright:before,
+body.produce_advantage .navbar-item.produce_advantage i.icon-arrowright:before,
+body.crop_weather .navbar-item.crop_weather i.icon-arrowright:before,
+body.price_affect .navbar-item.price_affect i.icon-arrowright:before,
+body.price_conduction .navbar-item.price_conduction i.icon-arrowright:before,
+body.price_forecast .navbar-item.price_forecast i.icon-arrowright:before,
+body.price_market .navbar-item.price_market i.icon-arrowright:before,
+body.price_monitor .navbar-item.price_monitor i.icon-arrowright:before,
+body.income_profit .navbar-item.income_profit i.icon-arrowright:before,
+body.income_cost .navbar-item.income_cost i.icon-arrowright:before,
+body.trade_flow .navbar-item.trade_flow i.icon-arrowright:before,
+body.trade_influence .navbar-item.trade_influence i.icon-arrowright:before,
+body.trade_price .navbar-item.trade_price i.icon-arrowright:before,
+body.trade_situation .navbar-item.trade_situation i.icon-arrowright:before,
+body.trade_world .navbar-item.trade_world i.icon-arrowright:before,
+body.consume_blueprint .navbar-item.consume_blueprint i.icon-arrowright:before,
+body.consume_channel .navbar-item.consume_channel i.icon-arrowright:before,
+body.consume_situation .navbar-item.consume_situation i.icon-arrowright:before,
+body.consume_supplydemand .navbar-item.consume_supplydemand i.icon-arrowright:before {
+  content: "\e60a"; }
+
+body.globe_apple .navbar-item.globe_apple i.iconfont + a,
+body.production_status .navbar-item.production_status i.iconfont + a,
+body.produce_advantage .navbar-item.produce_advantage i.iconfont + a,
+body.crop_weather .navbar-item.crop_weather i.iconfont + a,
+body.price_affect .navbar-item.price_affect i.iconfont + a,
+body.price_conduction .navbar-item.price_conduction i.iconfont + a,
+body.price_forecast .navbar-item.price_forecast i.iconfont + a,
+body.price_market .navbar-item.price_market i.iconfont + a,
+body.price_monitor .navbar-item.price_monitor i.iconfont + a,
+body.income_profit .navbar-item.income_profit i.iconfont + a,
+body.income_cost .navbar-item.income_cost i.iconfont + a,
+body.trade_flow .navbar-item.trade_flow i.iconfont + a,
+body.trade_influence .navbar-item.trade_influence i.iconfont + a,
+body.trade_price .navbar-item.trade_price i.iconfont + a,
+body.trade_situation .navbar-item.trade_situation i.iconfont + a,
+body.trade_world .navbar-item.trade_world i.iconfont + a,
+body.consume_blueprint .navbar-item.consume_blueprint i.iconfont + a,
+body.consume_channel .navbar-item.consume_channel i.iconfont + a,
+body.consume_situation .navbar-item.consume_situation i.iconfont + a,
+body.consume_supplydemand .navbar-item.consume_supplydemand i.iconfont + a {
+  color: #ffeb44; }
+
+body.globe_apple .navbar-item.globe_apple ul,
+body.production_status .navbar-item.production_status ul,
+body.produce_advantage .navbar-item.produce_advantage ul,
+body.crop_weather .navbar-item.crop_weather ul,
+body.price_affect .navbar-item.price_affect ul,
+body.price_conduction .navbar-item.price_conduction ul,
+body.price_forecast .navbar-item.price_forecast ul,
+body.price_market .navbar-item.price_market ul,
+body.price_monitor .navbar-item.price_monitor ul,
+body.income_profit .navbar-item.income_profit ul,
+body.income_cost .navbar-item.income_cost ul,
+body.trade_flow .navbar-item.trade_flow ul,
+body.trade_influence .navbar-item.trade_influence ul,
+body.trade_price .navbar-item.trade_price ul,
+body.trade_situation .navbar-item.trade_situation ul,
+body.trade_world .navbar-item.trade_world ul,
+body.consume_blueprint .navbar-item.consume_blueprint ul,
+body.consume_channel .navbar-item.consume_channel ul,
+body.consume_situation .navbar-item.consume_situation ul,
+body.consume_supplydemand .navbar-item.consume_supplydemand ul {
+  display: block; }

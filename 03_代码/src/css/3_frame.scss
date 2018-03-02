@@ -1,0 +1,320 @@
+﻿@import 'cs';
+// $color-hard-blue: rgba(112, 196, 255, .8);
+
+/* body 背景 */
+
+.body-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -100;
+}
+
+.body-bg > img {
+    height: 100%;
+    width: 100%;
+    border: 0;
+}
+
+.wrapper {
+    position: relative;
+    display: table;
+    table-layout: fixed;
+    // border: 1px solid red;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 30px 25px;
+}
+
+.cont {
+    // @include ver(14px, top);
+    display: table-cell;
+    vertical-align: top;
+    box-sizing: border-box;
+    width: calc(100% - 260px);
+    overflow: hidden;
+    padding: 0 20px 0;
+    color: #fff;
+    // height: 900px;
+    min-height: 300px;
+    @include animation;
+}
+
+// 顶部导航样式
+.head {
+    @include flex();
+    width: 95%;
+    height: 85px;
+    margin: 0 auto;
+    color: #fff;
+    .title {
+        @include flex();
+        width: 350px;
+        .line {
+            width: 1px;
+            height: 35px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, .3) 25%, #fff 50%, rgba(255, 255, 255, .3));
+        }
+        .name {
+            font-size: 27px;
+            // box-shadow: 0 0 3px 3px #fff;
+            text-shadow: 0 3px 8px #fff;
+        }
+    }
+    .navigation {
+        width: 600px;
+        font-size: 16px;
+        @include flex();
+        .nav {
+            // @include flex();
+            font-size: 0;
+            .nav-item {
+                @include ver(16px, top);
+                box-sizing: border-box;
+                a {
+                    display: inline-block;
+                    // border: 1px solid green;
+                    padding: 0 10px;
+                    padding-bottom: 5px;
+                    box-sizing: border-box;
+                    font-size: 16px;
+                    // @include color-simple-blue;
+                    color: #6CC3FF;
+                    &.active {
+                        // background-image: radial-gradient(at center 200%, rgba(74, 180, 254, .7) 20%, transparent);
+                        // background-image: linear-gradient(0deg, rgba(74, 180, 254, .7) 10%, transparent 50%);
+                        // background-size: 50% 80%;
+                        border-bottom: 2px solid rgba(74, 180, 254, .7);
+                    }
+                }
+            }
+        }
+        .profile {
+            button {
+                background: none;
+                border: none;
+                @include color-simple-blue;
+                margin-left: 15px;
+            }
+        }
+    }
+}
+
+// 左侧导航样式
+.nav-bar-bg {
+    display: table-cell;
+    vertical-align: top;
+    // position: fixed;
+    // @include ver(14px, top);
+    width: 260px;
+    @media screen and (max-width: 1260px) {
+        width: 200px;
+    }
+    height: 100%;
+    padding: 18px;
+    font-size: 14px;
+    box-sizing: border-box;
+    @include linear(90deg, #151b5f, #1a2777) @include color-simple-blue;
+    @include animation;
+    .nav-bar {
+        position: absolute;
+        width: 220px;
+        @media screen and (max-width: 1260px) {
+            width: 165px;
+        }
+        @include animation;
+    }
+    .navbar-item {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        h2 {
+            font-size: 0;
+            position: relative;
+            height: 35px;
+            line-height: 35px;
+            padding: 0 9px;
+            font-weight: normal;
+            background: rgba(255, 255, 255, .1);
+            border-radius: 3px;
+            box-sizing: border-box;
+            cursor: pointer;
+            // 下拉箭头
+            .iconfont:last-child {
+                position: absolute;
+                font-size: 15px;
+                right: 0px;
+                top: 0px;
+            }
+            i {
+                display: inline-block;
+                vertical-align: middle;
+                width: 35px;
+                font-size: 25px;
+                text-align: center;
+                @include color-simple-blue;
+            }
+            a {
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 14px;
+                width: calc(100% - 35px);
+                @include color-simple-blue;
+            }
+        }
+        ul {
+            // height: 0;
+            display: none;
+            // overflow: hidden;
+            padding-left: 39px;
+            // @include animation;
+            li {
+                line-height: 3;
+                @media screen and (max-height: 768px) {
+                    line-height: 2;
+                }
+            }
+            a {
+                display: inline-block;
+                line-height: 1.5;
+                @include color-simple-blue;
+                @include animation;
+                &:hover,
+                &.active {
+                    // @include color-gold;
+                    color: $color-gold;
+                }
+            }
+        }
+    }
+}
+
+// 激活样式
+
+%jihuo {
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 110%;
+        height: 150%;
+        background: radial-gradient(100% 100% at bottom -9px center, rgba(74, 180, 254, 1), transparent 50%);
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent 0, rgba(74, 180, 254, .7) 50%, transparent 100%);
+    }
+}
+
+
+// head导航 苹果生产
+body.globe_apple,
+body.production_status,
+body.produce_advantage,
+body.crop_weather {
+    .apple-product a {
+        position: relative;
+        color: #fff!important;
+        @extend %jihuo;
+    }
+}
+
+// head导航 市场价格
+body.price_affect,
+body.price_conduction,
+body.price_forecast,
+
+body.price_monitor {
+    .market-price a {
+        position: relative;
+        color: #fff!important;
+        @extend %jihuo;
+    }
+}
+
+// head导航 对外贸易
+body.trade_flow,
+body.trade_influence,
+body.trade_price,
+body.trade_situation,
+body.trade_world {
+    .commerce a {
+        // border-bottom: 2px solid rgba(74, 180, 254, 0.7);
+        position: relative;
+        color: #fff!important;
+        @extend %jihuo;
+    }
+}
+
+// head导航 成本收益
+body.income_cost,
+body.income_profit {
+    .cost-income a {
+        // border-bottom: 2px solid rgba(74, 180, 254, 0.7);
+        position: relative;
+        color: #fff!important;
+        @extend %jihuo;
+    }
+}
+
+// head导航 苹果消费
+body.price_market,
+
+body.consume_blueprint,
+body.consume_channel,
+body.consume_situation,
+body.consume_supplydemand {
+    .apple-consume a {
+        position: relative;
+        color: #fff!important;
+        @extend %jihuo;
+    }
+}
+
+
+// 左导航
+// 苹果生产
+body.globe_apple .navbar-item.globe_apple,
+body.production_status .navbar-item.production_status,
+body.produce_advantage .navbar-item.produce_advantage,
+body.crop_weather .navbar-item.crop_weather,
+// 市场价格
+body.price_affect .navbar-item.price_affect,
+body.price_conduction .navbar-item.price_conduction,
+body.price_forecast .navbar-item.price_forecast,
+body.price_market .navbar-item.price_market,
+body.price_monitor .navbar-item.price_monitor,
+// 成本收益
+body.income_profit .navbar-item.income_profit,
+body.income_cost .navbar-item.income_cost,
+// 对外贸易
+body.trade_flow .navbar-item.trade_flow,
+body.trade_influence .navbar-item.trade_influence,
+body.trade_price .navbar-item.trade_price,
+body.trade_situation .navbar-item.trade_situation,
+body.trade_world .navbar-item.trade_world,
+// 苹果消费
+body.consume_blueprint .navbar-item.consume_blueprint,
+body.consume_channel .navbar-item.consume_channel,
+body.consume_situation .navbar-item.consume_situation,
+body.consume_supplydemand .navbar-item.consume_supplydemand {
+    i.icon-arrowright:before {
+        content: "\e60a";
+    }
+    i.iconfont + a {
+        color: $color-gold;
+    }
+    ul {
+        display: block;
+    }
+}

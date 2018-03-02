@@ -1,0 +1,1143 @@
+﻿// 公共样式文件，按钮标题栏状态等
+
+@import 'cs';
+
+.hidden {
+    display: none!important;
+}
+
+// 按钮样式
+// 确认按钮
+.yes, .no, .time-yes, .time-no {
+    background: none;
+    border: none;
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+    border-radius: 10px;
+    color: #fff;
+    background: $color-ct;
+    &:hover {
+        background: #0C72DF;
+    }
+}
+// 编辑按钮
+.edit-btn {
+    display: inline-block;
+    background: transparent;
+    font-size: 0;
+    border: none;
+    color: $color-ct;
+    i, span {
+        @include ver(14px, middle);
+    }
+    i {
+        font-size: 25px;
+        margin-right: 10px;
+    }
+}
+
+
+// 下载按钮
+.download, .help > button {
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+    // width: 35px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    // margin-right: 15px;
+    background: transparent;
+    border: none;
+    @include animation;
+    &:hover {
+        color: #fff;
+        background: #1862DF;
+        box-shadow: 0 0 11px 5px #1862DF;
+        i {
+            color: #fff;
+        }
+    }
+    i {
+        font-size: 20px;
+        color: $color-ct;
+    }
+}
+
+.download {
+    display: none;
+}
+
+
+.toggle-down {
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    background: none;
+    border: none;
+    width: 80%;
+    color: $color-ct;
+    cursor: pointer;
+    border-radius: 4px;
+    @include animation;
+    &:hover {
+        color: #fff;
+        background: $color-ct;
+    }
+}
+
+// 多选框样式 兼容性 IE9+
+input[type=checkbox], input[type=radio] {
+    display: none;
+}
+// 未选中的checkbox的样式
+i.checkbox:before, i.radio:before {
+    content: "\e603";
+}
+input[type=checkbox]:checked + i.checkbox:before,
+input[type=radio]:checked + i.radio:before {
+    content: "\e655";
+}
+
+// 突出显示的金黄色文字
+.strong-gold {
+    color: $color-gold;
+    font-size: 24px;
+    padding: 0 4px;
+}
+// 突出显示的蓝色文字
+.strong-blue {
+    line-height: 1.3;
+    color: $color-blue;
+    font-size: 18px;
+    padding: 0 4px;
+}
+// 突出显示的红色色文字
+.strong-red {
+    line-height: 1.3;
+    color: $color-red;
+    font-size: 24px;
+    padding: 0 4px;
+}
+
+.echart-box {
+    display: block;
+    width: 100%;
+    height: 400px;
+    text-align: left!important;
+    text-align-last: left!important;
+    box-sizing: border-box;
+    &.important {
+        width: 100%!important;
+    }
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+.echart-des {
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    // font-size: 14px;
+    line-height: 1.5;
+}
+
+// 问号帮助
+.help {
+    position: relative;
+    z-index: 106;
+    margin: 0 10px;
+    &:hover {
+        .help-ct {
+            height: auto!important;
+            max-height: 400px!important;
+            padding: 10px!important;
+            border: 1px solid rgba(174, 195, 250, .8);
+            box-sizing: border-box;
+            overflow: auto;
+            &.important {
+            }
+            .diy-scroll {
+                height: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                .diy-scroll {
+                    padding: 0 10px 0;
+                }
+                code {
+                    font-size: 16px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+    .help-ct {
+        position: absolute;
+        right: 0;
+        z-index: 101;
+        overflow: hidden;
+        width: 400px;
+        height: 0;
+        padding: 0;
+        line-height: 2;
+        border-radius: 4px;
+        color: #fff;
+        background: rgba(61, 112, 245, .8);
+        box-sizing: border-box;
+        // @include animation;
+
+        &.l0 {
+            left: 0;
+        }
+        > .diy-scroll {
+            width: 100%;
+            height: 0;
+            padding: 0 10px;
+            // padding: 10px 0px 10px 10px;
+            overflow-x: hidden!important;
+            box-sizing: border-box;
+            background: rgba(20, 77, 227, .8);
+            // rgba(20, 77, 227, .8)
+            // .diy-scroll {
+            //     padding: 0 10px 0;
+            // }
+        }
+    }
+}
+
+// 编辑textarea
+.desc-edit {
+    display: none;
+    width: 100%;
+    margin-top: 30px;
+    .top {
+        // line-height: 3;
+        display: block!important;
+        font-size: 14px;
+        .desc-word {
+            display: inline-block;
+            border-radius: 4px 4px 0 0;
+            width: 68px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            box-sizing: border-box;
+            border: 1px solid $color-ct;
+            border-bottom: none;
+            color: $color-ct;
+            background: #1C286D;
+        }
+    }
+    .desc-ct {
+        display: block;
+        border: 1px solid $color-ct;
+        border-radius: 0 0 4px 4px;
+        padding: 20px;
+        box-sizing: border-box;
+        .edit-ct {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            padding: 0;
+            padding-right: 13px;
+            color: $color-ct;
+        }
+    }
+}
+
+// section-top 处  各个区域中，上面的标题样式
+.pub-title {
+    flex: 1 0 auto;
+    // width: 220px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 7px;
+    box-sizing: border-box;
+    border-left: 2px solid $color-gold;
+    font-size: 16px;
+    font-weight: bold;
+    color: $color-title;
+}
+
+// section-top 处  种植面积 产量等单选样式
+.pub-radio {
+    @include flex();
+    flex: 1 0 auto;
+    border: 1px solid  $color-ct;
+    li {
+        width: 96px;
+        @media screen and (max-width: 1360px) {
+            width: 65px;
+        }
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 1px;
+        color: $color-ct;
+        border-right: 1px solid $color-ct;
+        cursor: pointer;
+        @include animation;
+        &.last-child {
+            border-right: none;
+        }
+        &.active {
+            background: $color-ct;
+            background-clip: content-box;
+            color: #fff;
+        }
+    }
+}
+
+// section-top 处 iconfont 按钮
+.pub-icon {
+    // width: 90px;
+    flex: 1 0 auto;
+    .icon-btn {
+        display: inline-block;
+        border: none;
+        background: transparent;
+        color: $color-ct;
+        // border: 1px solid red;
+        width: 35px;
+        height: 30px;
+        text-align: center;
+        border-radius: 50%;
+        margin-right: 15px;
+        cursor: pointer;
+        &:last-child {
+            margin-right: 0;
+        }
+        &.active {
+            color: #fff;
+            background: #1862DF;
+            box-shadow: 0 0 11px 8px #1862DF;
+        }
+    }
+}
+
+.pub-icon .icon-btn:last-child {
+    display: none;
+}
+
+.pub-icon .icon-btn:first-child:last-child {
+    display: block;
+}
+
+// section-top 处 地区多选按钮
+.pub-check {
+    @include flex(center, flex-start);
+    flex: 0 0 auto;
+    // max-width: 300px;
+    font-size: 0;
+    height: 25px;
+    line-height: 25px;
+    .fixlocation {
+        display: none!important;
+        @include flex(center, flex-start);
+        // font-size: 0;
+        // width: 200px;
+        flex-flow: row nowrap;
+        color: $color-ct;
+        dt, dd {
+            // @include flex(center, flex-start);
+            // flex-flow: row nowrap;
+            font-size: 14px;
+        }
+        .locations {
+            @media screen and (max-width: 1366px) {
+                @include flex(center, flex-start);
+                flex-flow: row nowrap;
+                flex: 0 0 150px;
+                width: 150px;
+                overflow: hidden;
+                // text-overflow: ellipsis;
+                // white-space:nowrap;
+                @include animation;
+                // &:hover {
+                    // position: absolute;
+                    // z-index: 2;
+                    // flex: auto;
+                    // width: auto;
+                    // overflow: visible;
+                    // background: $color-blue;
+                    // color: #fff;
+                // }
+                span {
+                    flex: 0 0 auto;
+                    flex-flow: row nowrap;
+                }
+            }
+            span {
+                display: inline-block;
+                // width: 50px;
+                padding: 0 5px;
+                @media screen and (max-width: 1360px) {
+                    // width: 31px;
+                    padding: 0 3px;
+                }
+                text-align: center;
+                @include animation;
+            }
+        }
+    }
+    .another-location {
+        position: relative;
+        @include flex();
+        font-size: 0;
+        color: $color-gold;
+        // &:hover {
+        //     .pop-areas {
+        //         display: block;
+        //     }
+        // }
+        .for-pop, .areas {
+            font-size: 14px;
+        }
+        > .for-pop {
+            // width: 50px;
+            text-align: right;
+            cursor: pointer;
+        }
+        .pop-areas {
+            display: none;
+            position: absolute;
+            top: 25px;
+            right: 0;
+            z-index: 99;
+            width: 210px;
+            padding-bottom: 35px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            color: $color-ct;
+            font-size: 0;
+            background: #0a3264;
+            &.l0 {
+                left: 0;
+            }
+            // background: rgba(10, 50, 100, 0.8);
+            .areas {
+                @include flex(flex-start, flex-start);
+                // flex-flow: row nowrap;
+                flex-flow: column nowrap;
+                width: 100%;
+                box-sizing: border-box;
+                max-height: 250px;
+                overflow: auto;
+                background: #0a3264;
+                padding: 15px;
+                // @include animation;
+                .area-item {
+                    // width: 100%;
+                    box-sizing: border-box;
+                    margin: 5px 0;
+                    label {
+                        @include flex(center, flex-start);
+                        // line-height: 2.5;
+                        > span {
+                            margin-left: 8px;
+                        }
+                    }
+                }
+            }
+            .yesorno-btn {
+                position: absolute;
+                bottom: 3px;
+                left: 0;
+                width: 100%;
+                height: 35px;
+                line-height: 35px;
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+// 新需求 时间弹出
+.pub-time {
+    position: relative;
+    @include flex(center, flex-start);
+    flex: 0 0 auto;
+    flex-flow: row nowrap;
+    max-width: 300px;
+    height: 25px;
+    line-height: 25px;
+    .fixtime {
+        @include flex(center, flex-end);
+        flex-flow: row nowrap;
+        cursor: pointer;
+        // font-size: 0;
+        width: 130px;
+        padding: 0 10px;
+        color: $color-ct;
+        > .time-des {
+            width: 42px;
+            color: $color-ct;
+            margin-right: 10px;
+        }
+        dt, dd {
+            font-size: 14px;
+        }
+    }
+    .another-time {
+        position: absolute;
+        top: 25px;
+        right: 0;
+        z-index: 99;
+        width: 100%;
+        // padding: 0 8px;
+        box-sizing: border-box;
+        @include flex(center, space-between);
+        flex-flow: column nowrap;
+        background: #0a3264;
+        color: $color-ct;
+        display: none;
+        .time-list {
+            @include flex(center, space-between);
+            flex-flow: column nowrap;
+            // width: 100%;
+            box-sizing: border-box;
+            max-height: 250px;
+            overflow: auto;
+            .time-item, .month-item {
+                // width: 100%;
+                margin: 5px 0;
+                box-sizing: border-box;
+                // line-height: 35px;
+                text-align: center;
+                label {
+                    display: inline-block;
+                    // width: 100%;
+                    height: 100%;
+                    i {
+                        margin-right: 10px;
+                    }
+                }
+            }
+            .month-item {
+                margin: 5px 15px;
+            }
+            .month-item ~ .time-item {
+                display: none;
+            }
+        }
+        .yesorno-btn {
+            // position: absolute;
+            // bottom: 3px;
+            // left: 0;
+            width: 100%;
+            height: 35px;
+            line-height: 35px;
+            font-size: 14px;
+            text-align: center;
+            // display: none;
+        }
+    }
+}
+
+// 时间 弹出
+.pop-time {
+    position: relative;
+    @include flex();
+    flex-flow: row nowrap;
+    flex: 0 0 auto;
+    height: 25px;
+    line-height: 25px;
+    color: $color-ct;
+    box-sizing: border-box;
+    .time-des {
+        width: 100px;
+        cursor: pointer;
+    }
+    .time-txt {
+        cursor: pointer;
+    }
+    .time-list {
+        position: absolute;
+        top: 25px;
+        left: 0;
+        z-index: 101;
+        @include flex(center, center);
+        flex-flow: column nowrap;
+        display: none;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+        border-radius: 4px;
+        color: $color-ct;
+        background: #0a3264;
+        .time-item {
+            @include flex(space-around, center);
+            line-height: 2.5;
+            label {
+                // display: block;
+                @include flex();
+                // width: 100%;
+                // height: 100%;
+            }
+            span {
+                margin-left: 15px;
+            }
+        }
+    }
+}
+
+
+// 日度 周度 月度 年度
+.time-tab {
+    @include flex();
+    flex-flow: row nowrap;
+    width: 325px;
+    height: 28px;
+    line-height: 28px;
+    box-sizeing: border-box;
+    border: 1px solid $color-blue;
+    border-radius: 14px;
+    color: $color-ct;
+    background-color: rgba(15, 20, 251, 0.25);
+    li {
+        flex: 1 0 auto;
+        height: 100%;
+        text-align: center;
+        cursor: pointer;
+        @include animation;
+        &.active {
+            color: #02165d;
+            background: #24d0fd;
+            border-radius: 14px;
+        }
+    }
+}
+
+
+// 表格样式
+.sheet {
+    width: 100%;
+    line-height: 35px;
+    text-align: center;
+    color: $color-ct;
+    thead {
+        background: #1C2E8A;
+        th {
+            text-align: center;
+            &:first-child, &:last-child {
+                width: 100px;
+                text-align: center;
+            }
+            &:nth-child(2){
+                width: 100px;
+            };
+        }
+        th:first-child:nth-last-child(4), th:first-child:nth-last-child(4) ~ th,
+        th:first-child:nth-last-child(3), th:first-child:nth-last-child(3) ~ th {
+            width: auto !important;
+            text-align: center;
+        }
+    }
+    tbody {
+        tr {
+            background: transparent;
+            &:nth-child(even) {
+                @include linear(180deg, #283EA6, #1F2886)
+            }
+            td {
+                input {
+                    background: transparent;
+                    border: none;
+                    color: $color-ct;
+                    display: inline-block;
+                    width: 100%;
+                    height: 35px;
+                    line-height: 35px;
+                    text-align: center;
+                    box-sizing: border-box;
+                }
+                &:last-child {
+                    color: $color-gold;
+                    cursor: pointer;
+                }
+            }
+            // td:first-child:nth-last-child(4),
+            // td:first-child:nth-last-child(4) ~ th {
+            //     input {
+            //         background: transparent;
+            //         border: none;
+            //         color: $color-ct;
+            //         display: inline-block;
+            //         width: 100%;
+            //         height: 35px;
+            //         line-height: 35px;
+            //         text-align: center;
+            //         box-sizing: border-box;
+            //     }
+            // }
+        }
+    }
+}
+
+// 排名占比tab切换
+.charts-tab {
+    border: 1px solid rgba(174, 195, 250, .8);
+    padding: 10px;
+    border-radius: 4px;
+    .tab-nav {
+        @include flex(center, flex-start);
+        font-size: 0;
+        li {
+            $length: 35px;
+            position: relative;
+            width: 55px;
+            height: $length;
+            line-height: $length;
+            text-align: center;
+            margin-right: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            &.active {
+                background: #1C2873;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    display: inline-block;
+                    width: $length;
+                    height: 100%;
+                    right: -$length;
+                    background: linear-gradient(60deg, #1C2873 50%, transparent 0);
+                }
+            }
+        }
+    }
+    .tab-ct {
+        width: 100%;
+        background: #1C2873;
+    }
+}
+
+// 日历控件 input 的样式
+.calendar {
+    > span {
+        color: $color-ct;
+    }
+    > input {
+        background: transparent;
+        border: none;
+        font-size: 16px;
+        color: $color-ct !important;
+        width: 90px;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+// 描述
+.section-desc, .zone-advantage {
+    line-height: 3;
+    width: 100%;
+    font-size: 20px!important;
+    font-weight: bold;
+    color: #fff;
+    box-sizing: border-box;
+    border-bottom: 1px solid;
+    border-color: #83c0ff;
+    border-color: rgba(131, 192, 255, .2);
+}
+
+.special-center {
+    position: absolute;
+    left: 50%;
+    width: auto!important;
+    transform: translateX(-50%);
+    border-bottom: none;
+}
+
+// 各个区块 布局 样式
+.section {
+    // margin-top: 50px;
+    margin-bottom: 30px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &:first-child {
+        margin-top: 10px;
+    }
+    .sec-top {
+        position: relative;
+        @include flex();
+        // border: 1px solid red;
+        .else {
+            @include flex();
+            flex: 0 1 auto;
+            > div, > ul {
+                margin-right: 20px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        .special-else {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    .sec-ct {
+        padding: 20px;
+        > div {
+            width: 100%;
+            .sec-part {
+                position: relative;
+                font-size: 0;
+                @include justify();
+                width: 100%;
+                box-sizing: border-box;
+                > div {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: top;
+                    @include tl(center);
+                    font-size: 14px;
+                }
+                > div:first-child:last-child {
+                    width: 100%;
+                }
+                > div:first-child:nth-last-child(2) {
+                    width: 58%;
+                }
+                > div:first-child:nth-last-child(2) ~ div {
+                    width: 38%;
+                }
+                > div:first-child:nth-last-child(3), > div:first-child:nth-last-child(3) ~ div {
+                    width: 33.33%;
+                }
+                .echart-desc {
+                    @include flex(flex-start, space-between);
+                    position: absolute;
+                    top: 10px;
+                    left: 37px;
+                    right: 10px;
+                    bottom: 70px;
+                    z-index: -1;
+                    width: calc(100% - 106px)!important;
+                    // height: 380px;
+                    // background: red;
+                    div {
+                        flex: 1 1 auto;
+                        position: relative;
+                        text-align: center;
+                        height: 100%;
+                        color: $color-ct;
+                        span {
+                            position: absolute;
+                            top: -30px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+                    }
+                    .first {
+                        background: rgba(50, 190, 255, .5);
+                    }
+                    .second {
+                        background: rgba(50, 190, 255, .3);
+                    }
+                    .third {
+                        background: rgba(50, 190, 255, .1);
+                    }
+                    .forth {
+                        background: rgba(50, 190, 255, .8);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.currentArea {
+    color: $color-ct;
+}
+
+// 地图
+.one {
+    width: 100%;
+    height: 900px;
+    position: relative;
+    @media screen and (max-width: 1366px) {
+        height: 450px;
+    }
+    // background-color:#2B42B3;
+}
+#beyondtf.one {
+    height: 400px;
+}
+.map{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+.topName{
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    color: $color-ct;
+    font-size: 16px;
+    z-index: 222;
+}
+.topName p, .topName div, .topName span{
+    float: left;
+    margin-right: 5px;
+    cursor: pointer;
+    &.last-child {
+        margin-right: 0;
+    }
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 99;
+    width: 170px;
+    // height: 50px;
+    padding: 10px;
+    background: rgba(15,55,140,0.7);
+    border: 1px solid #5CC1FF;
+    color: #fff;
+    display: none;
+    text-align: left!important;
+    text-align-last: left!important;
+}
+
+.time-control {
+    width: 100%!important;
+    margin-top: 55px;
+}
+
+.sectop-two, .sec-two {
+    @include flex(center, space-between);
+    margin: 10px 0;
+    line-height: 2;
+    width: 100%;
+    font-size: 14px;
+    color: #82bcff;
+    box-sizing: border-box;
+    > div {
+        @include flex(center, flex-start);
+    }
+}
+
+.sec-two {
+    justify-content: flex-end;
+    margin-bottom: 50px;
+}
+
+.map-area {
+    cursor: pointer;
+}
+
+.sectop-twoline {
+    margin: 10px 0;
+    line-height: 2;
+    width: 100%;
+    font-size: 14px;
+    color: #82bcff;
+    box-sizing: border-box;
+}
+
+/*公共样式——虚假的下拉框——模拟点击效果*/
+.fake-ul {
+    display: inline-block;
+    position: relative;
+    // width: 70px;
+    height: 30px;
+    border: 1px solid $color-ct;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 0;
+}
+.fake-ul > .sel-area, .fake-ul > i {
+    font:14px/1.2 arial,\5FAE\8F6F\96C5\9ED1 normal;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: middle;
+    color: $color-ct!important;
+    outline: 0;
+}
+
+.fake-ul > .sel-area {
+    display: inline-block;
+    margin-right: 0!important;  /*input 与 i 两者相贴合，以免其它样式影响*/
+    // max-width: 100px;
+    min-width: 80px;
+    height: 28px !important;       /*！！！！！设置下拉框的高度*/
+    line-height: 28px;
+    padding-left: 8px;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: none !important;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background: transparent;
+    color: $color-ct;
+    cursor: pointer;
+}
+.fake-ul > i {
+    margin-left: 0!important;  /*input 与 i 两者相贴合，以免其它样式影响*/
+    width: 30px;
+    height: 100%;
+    line-height: 34px;
+    font-size: 14px !important;
+    /*cursor: pointer;*/
+    color: #667381;
+    border-radius: 0 4px 4px 0;
+    /*background: #00f;*/
+    text-align: center;
+                    /*！！！！设置下拉框 右侧样式，背景图片*/
+}
+
+.fake-ul > ul {
+    position: absolute;
+    font:14px/1.2 arial,\5FAE\8F6F\96C5\9ED1 normal;
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #0A3264;
+    // border: 1px solid  #0A3264;
+    max-height: 250px;
+    overflow: auto;
+    box-sizing: border-box;
+    top: 35px;
+    display: none;
+    z-index: 100;
+}
+.fake-ul > ul li {
+    display: block;
+    padding-left: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    line-height: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.fake-ul > ul li:hover, .fake-ul > ul li.active {
+    background: #0D64E0;
+}
+/*公共样式——虚假的下拉框——模拟点击效果*/
+
+.sel-areas {
+    @include flex(center, flex-start);
+}
+
+.time-control {
+    width: 100%!important;
+}
+
+.right-echart {
+    border: 1px solid rgba(174, 195, 250, 0.8);
+    padding: 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    position: relative;
+    .description {
+        line-height: 2;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+    .echart-ct {
+        box-sizing: border-box;
+        width: 100%;
+        background: #1A256D;
+        &.opacity {
+            background: rgba(28, 40, 115, .5);
+        }
+    }
+}
+
+// 地图 高度 自适应问题
+.special-height {
+    height: 800px;
+    @media screen and (max-width: 1366px) {
+        height: 450px;
+    }
+}
+// 地图 高度 自适应问题 三期问题两个表格
+.special-height-three {
+    box-sizing: border-box;
+    height: 600px;
+    @media screen and (max-width: 1366px) {
+        height: 400px;
+    }
+}
+.calc-height {
+    box-sizing: border-box;
+    height: calc(600px - 85px)!important;
+    @media screen and (max-width: 1366px) {
+        height: calc(400px - 105px)!important;
+        // height: 400px;
+    }
+}
+.calc-height-two {
+    box-sizing: border-box;
+    height: calc(800px - 85px)!important;
+    @media screen and (max-width: 1366px) {
+        height: calc(500px - 155px)!important;
+        // height: 400px;
+    }
+}
+
+.w40 {
+    width: 40%!important;
+}
+.w50 {
+    width: 50%!important;
+}
+.w48 {
+    width: 48%!important;
+}
+.h600 {
+    height: 600px!important;
+}
+.h900 {
+    height: 900px!important;
+    @media screen and (max-width: 1366px) {
+        height: 500px;
+    }
+}
+
+/**  传导机制页面 空间相关性css **/
+.related .echart-box{height: 900px;}
+/**  气象页面 作物气象监测预警  **/
+.warming .echart-box{height:800px;}
+.mrt20 {margin-top:20px;}
+// 更改 placeholder 样式
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #fff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: #fff;
+   opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: #fff;
+   opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color: #fff;
+}
+
+/* 帮助里面的标题样式 */
+.help p{text-indent: 2rem;}
+.help .help-title{
+    font-weight: bold;
+    font-size: 16px;
+    text-indent: 0;
+}

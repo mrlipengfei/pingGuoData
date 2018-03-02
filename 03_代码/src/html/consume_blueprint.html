@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemeas-microsoft-com:vml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <title>苹果大数据应用平台</title>
+    <link rel="stylesheet" href="../Lib/iconfont/iconfont.css"/>
+    <link rel="stylesheet" href="../Lib/scroll/jquery.scrollbar.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <script src="../Lib/jquery-1.12.4.min.js"></script>
+    <script src="../Lib/time-scrollbar.js"></script>
+    <script src="../Lib/scroll/jquery.scrollbar.min.js"></script>
+</head>
+<body class="consume_blueprint">
+@@include('./include/head.html')
+<div class="wrapper">
+    @@include('./include/nav_bar_consume.html')
+    <div class="cont">
+        <div id="consume_blueprint_产地偏好" class="section area-preference">
+            <div class="sec-top">
+                <h3 class="pub-title">产地偏好</h3>
+                <div class="pub-time">
+                    <dl class="fixtime">
+                        <div class="time-des">时间：</div>
+                        <div class="time-txt">2017</div>
+                    </dl>
+                    <div class="another-time">
+                        <ul class="time-list scrollbar-inner">
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2017</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2016</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2015</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2014</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2013</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <!--<div class="yesorno-btn">
+                          <button class="time-yes" style="margin-right: 8px;">确认</button>
+                          <button class="time-no">清除</button>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="else mrl20">
+                    <ul class="pub-radio">
+                        <li class="active">月度</li>
+                        <li>年度</li>
+                    </ul>
+                    <div class="help">
+                        <button><i class="iconfont icon-wenhao"></i></button>
+                        <div class="help-ct">
+                            <div class="diy-scroll">
+                                <p class='help-title'>（1）数据来源</p>
+                                <p>电商平台、农业部</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sec-ct">
+                <div>
+                    <div class="sec-part">
+                        <div id="areaPreference" class="echart-box" style="width:100%;"></div>
+                        <div id="analyze-timeCDPH" class="time-control"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="consume_blueprint_特产品类热度" class="section category-heat">
+            <div class="sec-top">
+                <h3 class="pub-title">特产品类热度</h3>
+                <div class="pub-time">
+                    <dl class="fixtime">
+                        <div class="time-des">时间：</div>
+                        <div class="time-txt">2017</div>
+                    </dl>
+                    <div class="another-time">
+                        <ul class="time-list scrollbar-inner">
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2017</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2016</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2015</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2014</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2013</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sel-areas mrl20">
+                    <div class="fake-ul">
+                        <span class="sel-area">全国</span>
+                        <i class="iconfont icon-xiala"></i>
+                        <ul>
+                            <li>全国</li>
+                            <li>北京</li>
+                            <li>山东</li>
+                            <li>天津</li>
+                            <li>浙江</li>
+                            <li>河北</li>
+                            <li>河南</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="else mrl20">
+                    <ul class="pub-radio">
+                        <li class="active">月度</li>
+                        <li>年度</li>
+                    </ul>
+                    <div class="help">
+                        <button><i class="iconfont icon-wenhao"></i></button>
+                        <div class="help-ct">
+                            <div class="diy-scroll">
+                                <p class='help-title'>（1）数据来源</p>
+                                <p>电商平台、农业部</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sec-ct">
+                <div>
+                    <div class="sec-part">
+                        <div id="categoryHeat" class="echart-box" style="width:100%;height:400px;"></div>
+                        <div id="analyze-timePLRD" class="time-control"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="consume_blueprint_档次偏好" class="section format-preference">
+            <div class="sec-top">
+                <h3 class="pub-title">档次偏好</h3>
+                <div class="pub-time">
+                    <dl class="fixtime">
+                        <div class="time-des">时间：</div>
+                        <div class="time-txt">2017</div>
+                    </dl>
+                    <div class="another-time">
+                        <ul class="time-list scrollbar-inner">
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2017</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2016</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2015</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2014</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2013</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sel-areas mrl20">
+                    <div class="fake-ul">
+                        <span class="sel-area">全国</span>
+                        <i class="iconfont icon-xiala"></i>
+                        <ul>
+                            <li>北京</li>
+                            <li>山东</li>
+                            <li>天津</li>
+                            <li>浙江</li>
+                            <li>河北</li>
+                            <li>河南</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="else mrl20">
+                    <ul class="pub-radio">
+                        <li class="active">月度</li>
+                        <li>年度</li>
+                    </ul>
+                    <div class="help">
+                        <button><i class="iconfont icon-wenhao"></i></button>
+                        <div class="help-ct">
+                            <div class="diy-scroll">
+                                <p class='help-title'>（1）数据来源</p>
+                                <p>电商平台、农业部</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sec-ct">
+                <div>
+                    <div class="sec-part">
+                        <div id="level1" class="echart-box" style="width:50%;overflow:visible;"></div>
+                        <div id="level2" class="echart-box" style="width:50%"></div>
+                        <div id="analyze-timeDCPH" class="time-control"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="consume_blueprint_交叉组合偏好" class="section cross-over">
+            <div class="sec-top">
+                <h3 class="pub-title">交叉组合偏好</h3>
+                <div class="sel-areas mrl20">
+                    <div class="fake-ul">
+                        <span class="sel-area typeSpan">单件重量与果径交叉分析</span>
+                        <i class="iconfont icon-xiala"></i>
+                        <ul class='cross-type'>
+                            <li>单件重量与果径交叉分析</li>
+                            <li>单价与果径交叉分析</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pub-time">
+                    <dl class="fixtime">
+                        <div class="time-des">时间：</div>
+                        <div class="time-txt">2017</div>
+                    </dl>
+                    <div class="another-time">
+                        <ul class="time-list scrollbar-inner">
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2017</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2016</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2015</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2014</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2013</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <!--<div class="yesorno-btn">
+                          <button class="time-yes" style="margin-right: 8px;">确认</button>
+                          <button class="time-no">清除</button>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="sel-areas mrl20">
+                    <div class="fake-ul">
+                        <span class="sel-area areaSpan">全国</span>
+                        <i class="iconfont icon-xiala"></i>
+                        <ul class='cross-area'>
+                            <li>北京</li>
+                            <li>山东</li>
+                            <li>天津</li>
+                            <li>浙江</li>
+                            <li>河北</li>
+                            <li>河南</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="else mrl20">
+                    <ul class="pub-radio">
+                        <li class="active">月度</li>
+                        <li>年度</li>
+                    </ul>
+                    <div class="help">
+                        <button><i class="iconfont icon-wenhao"></i></button>
+                        <div class="help-ct">
+                            <div class="diy-scroll">
+                                <p class='help-title'>（1）数据来源</p>
+                                <p>电商平台、农业部</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sec-ct">
+                <div>
+                    <div class="sec-part">
+                        <div id="crossOver" class="echart-box" style="width:100%; height:400px;margin-bottom:20px;"></div>
+                        <div id="analyze-timeJCPH" class="time-control"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="consume_blueprint_产品品牌热度" class="section brand-heat">
+            <div class="sec-top">
+                <h3 class="pub-title">产品品牌热度</h3>
+                <div class="pub-time">
+                    <dl class="fixtime">
+                        <div class="time-des">时间：</div>
+                        <div class="time-txt">2017</div>
+                    </dl>
+                    <div class="another-time">
+                        <ul class="time-list scrollbar-inner">
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2017</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2016</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2015</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2014</span>
+                                </label>
+                            </li>
+                            <li class="month-item">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    <i class="checkbox iconfont"></i>
+                                    <span>2013</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sel-areas mrl20">
+                    <div class="fake-ul">
+                        <span class="sel-area">全国</span>
+                        <i class="iconfont icon-xiala"></i>
+                        <ul>
+                            <li>北京</li>
+                            <li>山东</li>
+                            <li>天津</li>
+                            <li>浙江</li>
+                            <li>河北</li>
+                            <li>河南</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="else mrl20">
+                    <ul class="pub-radio">
+                        <li class="active">月度</li>
+                        <li>年度</li>
+                    </ul>
+                    <div class="help">
+                        <button><i class="iconfont icon-wenhao"></i></button>
+                        <div class="help-ct">
+                            <div class="diy-scroll">
+                                <p class='help-title'>（1）数据来源</p>
+                                <p>电商平台、农业部</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sec-ct">
+                <div>
+                    <div class="sec-part">
+                        <div id="brandHeat" class="echart-box" style="width:100%"></div>
+                        <div id="analyze-timePPRD" class="time-control"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+@@include('./include/bg_body.html')
+<script src="../Lib/Echarts/echarts.common.min.js"></script>
+<script src="../Lib/Echarts/echarts-engine.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/unite.js"></script>
+<script src="../js/consume_blueprint.js"></script>
+</body>
+</html>
